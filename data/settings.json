@@ -1,0 +1,7 @@
+{
+  "ref_tokens": ["557480550999392306"],
+  "wait_between_accs": {
+    "min": 1,
+    "max": 2
+  }
+}

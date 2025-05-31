@@ -9,3 +9,11 @@ yarn-error.log*
 .pnp.js
 
 .vscode/*
+
+# ESLint
+.eslintcache
+.eslintrc.*.json
+
+# Prettier
+.prettierrc.*.json
+.prettier-cache
