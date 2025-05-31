@@ -136,6 +136,19 @@ const main = async () => {
                         task.task_type,
                     );
                 }
+
+                const userTokens1 = await wumpApi.getTokens(accessToken, userId);
+
+                if (userTokens1 && userTokens1.length > 0) {
+                    const username = userTokens1[0].username;
+                    const points = userTokens1[0].total_points;
+
+                    logger.info(`User: ${username}, Points: ${points}`, accountIndex, proxy);
+                    await updateCsvFile(username, token, points);
+                } else {
+                    logger.warning('No user tokens found', accountIndex, proxy);
+                    continue;
+                }
             }
 
             const waitSec = _.random(
